@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DreamCatcher</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Categories</h2>
+      <div id="categoryList">
+        <div class="category-link active" onclick="filterCategory(this, null)">All</div>
+        <div class="category-link" onclick="filterCategory(this,'Work')">Work</div>
+        <div class="category-link" onclick="filterCategory(this,'Fitness')">Fitness</div>
+        <div class="category-link" onclick="filterCategory(this,'Learning')">Learning</div>
+        <div class="category-link" onclick="filterCategory(this,'Personal Growth')">Personal Growth</div>
+        <div class="category-link" onclick="filterCategory(this,'Fun')">Fun</div>
+      </div>
+
+      <!-- Add category form -->
+      <div class="add-category">
+        <input id="newCategory" type="text" placeholder="New category..." />
+        <button onclick="addCategory()">+</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header>
+        <h1>DreamCatcher</h1>
+        <div id="date" class="date"></div>
+      </header>
+
+      <!-- motivation + streak -->
+      <div id="motivation" class="motivation">💬 Loading...</div>
+      <div id="streakCounter" class="streak">🔥 Streak: 0 days</div>
+
+      <!-- add goal -->
+      <section class="goal-input">
+        <input id="goalInput" type="text" placeholder="Enter your goal..." />
+        <input id="dueDate" type="date" />
+        <button id="addBtn">Add</button>
+      </section>
+
+      <!-- progress -->
+      <div class="progress-container">
+        <div id="progressBar" class="progress-bar">0%</div>
+      </div>
+      <button onclick="clearCompleted()">Clear Completed</button>
+
+      <!-- list -->
+      <ul id="goalList" class="goal-list"></ul>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
